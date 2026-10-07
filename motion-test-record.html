@@ -59,45 +59,45 @@
                 </tr>
                 <tr>
                     <td>Reduced motion off versus on</td>
-                    <td>[Expected]</td>
-                    <td>[Observed]</td>
-                    <td>[Result]</td>
-                    <td>[Action]</td>
+                    <td>Normal motion should provide a short finite disclosure animation, while reduced-motion preference should remove the animation and transitions without removing state feedback.</td>
+                    <td>With reduced motion off, the confirmation used a short entrance animation. With reduced motion enabled, the disclosure appeared immediately without the animation, while the content, borders, and other state feedback remained visible.</td>
+                    <td>Pass</td>
+                    <td>No repair needed. Reduced-motion behavior preserved the same information without unnecessary movement.</td>
                 </tr>
                 <tr>
                     <td>200% zoom and narrow viewport</td>
-                    <td>[Expected]</td>
-                    <td>[Observed]</td>
-                    <td>[Result]</td>
-                    <td>[Action]</td>
+                    <td>Content and controls should remain readable and usable at 200% zoom and in a narrow viewport without clipping, overlap, or obscured focus indicators.</td>
+                    <td>At 200% zoom and approximately 320px viewport width, the content reflowed without horizontal clipping or overlapping controls. Text remained readable and visible focus indicators were not obscured.</td>
+                    <td>Pass</td>
+                    <td>No repair needed.</td>
                 </tr>
                 <tr>
                     <td>Effects temporarily disabled</td>
-                    <td>[Expected]</td>
-                    <td>[Observed]</td>
-                    <td>[Result]</td>
-                    <td>[Action]</td>
+                    <td>Labels, content, and state should remain understandable when decorative gradients and shadows are removed.</td>
+                    <td>After temporarily disabling the gradient and box-shadow effects, all labels and content remained visible and understandable. The action retained its text, underline, border, and decorative arrow, while the selected checkbox state remained distinguishable through the checked control and thicker label border. The disclosure content also remained readable.</td>
+                    <td>Pass</td>
+                    <td>No repair needed. Decorative effects enhance the visual feedback but are not required to understand the controls or their states.</td>
                 </tr>
                 <tr>
                     <td>Legibility over affected surfaces</td>
-                    <td>[Expected]</td>
-                    <td>[Observed]</td>
-                    <td>[Result]</td>
-                    <td>[Action]</td>
+                    <td>Text and control labels should remain clearly legible over gradients, shadows, and styled surfaces in every state.</td>
+                    <td>Action text remained legible in both its default and hover states. Selection text and confirmation content also remained readable over their styled surfaces with no text obscured by effects.</td>
+                    <td>Pass</td>
+                    <td>No repair needed.</td>
                 </tr>
-                <tr>
+               <tr>
                     <td>Performance recording: layout/paint/composition</td>
-                    <td>[Expected]</td>
-                    <td>[Observed]</td>
-                    <td>[Result]</td>
-                    <td>[Action]</td>
+                    <td>The interaction effects should complete quickly without sustained or excessive rendering work.</td>
+                    <td>The Performance recording showed brief clusters of rendering activity during the interactions. The activity was limited to the interaction periods, with no sustained rendering work visible across the recording.</td>
+                    <td>Pass</td>
+                    <td>No repair needed. The effects completed quickly and did not produce continuous rendering activity.</td>
                 </tr>
             </tbody>
         </table>
-        <h2>Evidence</h2>
-        <p><strong>Focus screenshot filename and what it proves:</strong> [Response]</p>
-        <p><strong>Reduced-motion screenshot filename and what it proves:</strong> [Response]</p>
-        <h2>Repair and retest</h2>
-        <p>[Identify the issue, exact CSS changed, and observed retest result. If all tests passed, describe the strongest specific evidence.]</p>
+       <h2>Evidence</h2>
+        <p><strong>Focus screenshot filename and what it proves:</strong> keyboard-focus.jpg - Shows a visible keyboard focus indicator on the View Confirmation link while navigating the prototype with the keyboard.</p>
+        <img src="keyboard-focus.jpg" alt="State and Motion Prototype with the “View Confirmation” link outlined in blue to show visible keyboard focus." width="600">
+        <p><strong>Reduced-motion screenshot filename and what it proves:</strong> reduced-motion.jpg - Shows the browser Rendering panel with <code>prefers-reduced-motion: reduce</code> enabled while the prototype remains visible and functional.</p>
+        <img src="reduce-motion.jpg" alt="State and Motion Prototype displayed beside browser DevTools with prefers-reduced-motion: reduce enabled in the Rendering panel." width="600">
     </body>
     </html>
