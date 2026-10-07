@@ -31,7 +31,7 @@
     </head>
     <body>
         <h1>Reduced-Motion and Performance Test Record</h1>
-        <p><strong>Prototype:</strong> State and Motion Prototype &nbsp; <strong>Browser/version:</strong> Version 154.0.4258.53 (Official build) (64-bit) &nbsp; <strong>Date:</strong> 10/6/2026</p>
+        <p><strong>Prototype:</strong> State and Motion Prototype &nbsp; <strong>Browser/version:</strong> Microsoft Edge Version 154.0.4258.53 (Official build) (64-bit) &nbsp; <strong>Date:</strong> 10/6/2026</p>
         <table>
             <thead>
                 <tr>
@@ -45,10 +45,10 @@
             <tbody>
                 <tr>
                     <td>Keyboard operation and visible focus</td>
-                    <td>[Expected]</td>
-                    <td>[Observed]</td>
-                    <td>[Result]</td>
-                    <td>[Action]</td>
+                    <td>All interactive controls should be reachable and operable using the keyboard, with a clearly visible focus indicator.</td>
+                    <td>The action link, checkbox, and disclosure were reachable using the Tab key and could be operated with the keyboard. A visible focus outline appeared on the focused control.</td>
+                    <td>Pass</td>
+                    <td>No repair needed.</td>
                 </tr>
                 <tr>
                     <td>Pointer operation; no hover-only information</td>
@@ -97,7 +97,10 @@
        <h2>Evidence</h2>
         <p><strong>Focus screenshot filename and what it proves:</strong> keyboard-focus.jpg - Shows a visible keyboard focus indicator on the View Confirmation link while navigating the prototype with the keyboard.</p>
         <img src="keyboard-focus.jpg" alt="State and Motion Prototype with the “View Confirmation” link outlined in blue to show visible keyboard focus." width="600">
-        <p><strong>Reduced-motion screenshot filename and what it proves:</strong> reduced-motion.jpg - Shows the browser Rendering panel with <code>prefers-reduced-motion: reduce</code> enabled while the prototype remains visible and functional.</p>
+        <p><strong>Reduced-motion screenshot filename and what it proves:</strong> reduce-motion.jpg - Shows the browser Rendering panel with <code>prefers-reduced-motion: reduce</code> enabled while the prototype remains visible and functional.</p>
         <img src="reduce-motion.jpg" alt="State and Motion Prototype displayed beside browser DevTools with prefers-reduced-motion: reduce enabled in the Rendering panel." width="600">
+      <h2>Repair and retest</h2>
+        <p>All required tests passed, so no additional repair was necessary. The strongest evidence came from the reduced-motion and Performance tests. With <code>prefers-reduced-motion: reduce</code> enabled, the disclosure animation and action transition 
+            were removed while the same state information remained visible. The Performance recording also showed brief rendering activity limited to the interaction periods, with no sustained rendering work visible.</p>
     </body>
     </html>
